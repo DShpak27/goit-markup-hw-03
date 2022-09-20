@@ -1,0 +1,204 @@
+/* Переменные по цвету текста и фона */
+:root {
+    --primary-txtcolor: #212121;
+    --secondary-txtcolor: #757575;
+    --accent-color: #2196F3;
+    --light-txtcolor: #FFFFFF;
+    --footer-contacts-txtcolor: rgba(255, 255, 255, 0.6);
+
+    --primary-backgrcolor:#FFFFFF;
+    --secondary-backgrcolor:#F5F4FA;
+    --darkpart-backgrcolor:#2F303A;
+}
+
+/* <body> */
+body {
+    background-color: var(--primary-backgrcolor);
+    color: var(--primary-txtcolor);
+    font-family: 'Roboto', sans-serif;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: inherit;
+}
+
+/* <header> */
+/* <nav> */
+.nav-site, .contacts {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.logo {
+    /* характерстики шрифта. кроме цветовых, совпадают с logo footera */
+    color: var(--primary-txtcolor);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+.logo .logo-part {
+    color: var(--accent-color);
+}
+/*  */
+.nav-site .link {
+    color: var(--primary-txtcolor);
+    }
+.nav-site .link.current {
+    color: var(--accent-color);
+}
+.nav-site .link:hover,
+.nav-site .link:focus,
+.contacts .link:hover,
+.contacts .link:focus {
+    color: var(--accent-color);
+}
+.contacts .link {
+    color: var(--secondary-txtcolor)
+}
+.sector .txtcontent {
+    color: var(--secondary-txtcolor);
+}
+
+/* <main> */
+/*  <section class="section hero"> */
+.sector.hero {
+    background-color:var(--darkpart-backgrcolor);
+}
+.hero-title {
+    color:var(--light-txtcolor);
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.hero-btn {
+    background-color:var(--accent-color);
+    color:var(--light-txtcolor);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+}
+.hero-btn:hover, .hero-btn:focus {
+    color:var(--primary-txtcolor);
+}
+
+ /* <section class="sector advantages"> */
+.advantages h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.advantages .txtcontent {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+
+.services h2,
+.team h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* <section class="sector services">
+<section class="sector team"> */
+.sector.team {
+    background-color: var(--secondary-backgrcolor);
+}
+
+.team h3 {
+    background-color: var(--primary-backgrcolor);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+.team .txtcontent {
+    background-color: var(--primary-backgrcolor);
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+
+/* <footer> */
+.footer {
+    background-color: var(--darkpart-backgrcolor);
+}
+.footer .logo {
+    color:var(--light-txtcolor);
+}
+.footer .address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+.address .location {
+    color: var(--light-txtcolor);
+}
+.address .mail,
+.address .tel  {
+    color:var(--footer-contacts-txtcolor)
+}
+.address .link:hover,
+.address .link:focus {
+    color: var(--accent-color);
+}
+
+/* Portfolio */
+/* <section class="sector filter"> */
+/* <ul class="buttons list"> */
+.filter .btn {
+    background-color: var(--secondary-backgrcolor);
+    color: var(--primary-txtcolor);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+.filter .btn:hover,
+.filter .btn:focus {
+    background-color: var(--accent-color);
+    color: var(--light-txtcolor);
+    cursor: pointer;
+}
+
+ /* <ul class="examples list"> */
+.filter h2 {
+    color: var(--primary-txtcolor);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+.filter .txtcontent {
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+}
+
