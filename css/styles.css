@@ -6,116 +6,263 @@
     --light-txtcolor: #FFFFFF;
     --footer-contacts-txtcolor: rgba(255, 255, 255, 0.6);
 
-    --primary-backgrcolor:#FFFFFF;
-    --secondary-backgrcolor:#F5F4FA;
-    --darkpart-backgrcolor:#2F303A;
+    --primary-backgrcolor: #FFFFFF;
+    --secondary-backgrcolor: #F5F4FA;
+    --darkpart-backgrcolor: #2F303A;
 }
 
-/* <body> */
+/* Глобальные настройки */
 body {
     background-color: var(--primary-backgrcolor);
+
     color: var(--primary-txtcolor);
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
-.list {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
     list-style: none;
 }
 
-.link {
+a {
     text-decoration: none;
 }
 
-.link:visited {
-    color: inherit;
+a:hover,
+a:focus {
+    color: var(--accent-color);
 }
 
-/* <header> */
-/* <nav> */
-.nav-site, .contacts {
+p {
+    color: var(--secondary-txtcolor);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* outline: 2px dashed tomato; */
+
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+/* временно для визуализации */
+/* header,
+section,
+footer {
+    outline: 2px dotted blue;
+} */
+
+/* ------------- */
+/* header */
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header .container {
+    display: flex;
+    /* выравниваю по вертикали всех детей флекс контейнера, детей 3-е */
+    align-items: center;
+}
+
+.logo {
+    /* является 1-ым flex элементом --> ".container.flex--model" */
+    display: block;
+
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    color: var(--primary-txtcolor);
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+
+.logo.logo--footer {
+    display: inline-block;
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: var(--light-txtcolor);
+}
+
+.logo:hover,
+.logo:focus {
+    color: inherit
+}
+
+.logo.logo--footer:hover,
+.logo.logo--footer:focus {
+    color: var(--light-txtcolor);
+}
+
+.logo__decor {
+    color: var(--accent-color);
+}
+
+/* .nav-site является 2-ым flex элементом -->".container.flex--model" */
+.nav-site__list {
+    display: flex;
+}
+
+.nav-site__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.header-contacts__list {
+    display: flex;
+}
+
+.nav-site__link {
+    display: block;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--primary-txtcolor);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
 
-.logo {
-    /* характерстики шрифта. кроме цветовых, совпадают с logo footera */
-    color: var(--primary-txtcolor);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-}
-.logo .logo-part {
+.nav-site__link.current--page {
     color: var(--accent-color);
-}
-/*  */
-.nav-site .link {
-    color: var(--primary-txtcolor);
-    }
-.nav-site .link.current {
-    color: var(--accent-color);
-}
-.nav-site .link:hover,
-.nav-site .link:focus,
-.contacts .link:hover,
-.contacts .link:focus {
-    color: var(--accent-color);
-}
-.contacts .link {
-    color: var(--secondary-txtcolor)
-}
-.sector .txtcontent {
-    color: var(--secondary-txtcolor);
 }
 
-/* <main> */
-/*  <section class="section hero"> */
-.sector.hero {
-    background-color:var(--darkpart-backgrcolor);
+/* .header-contacts__list является 3-им-последним flex элементом -->".container.flex--model" */
+.header-contacts__list {
+    margin-left: auto;
 }
-.hero-title {
-    color:var(--light-txtcolor);
+
+.header-contacts__link {
+    display: block;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--secondary-txtcolor);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.contacts__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+
+/*  Оформляем секцию hero */
+.hero.section {
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background-color: var(--darkpart-backgrcolor);
+}
+
+.hero .container {
+    text-align: center;
+}
+
+.hero__title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    max-width: 696px;
+
+    color: var(--light-txtcolor);
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
-.hero-btn {
-    background-color:var(--accent-color);
-    color:var(--light-txtcolor);
+
+.hero__btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 0;
+    padding: 10px 32px;
+    min-width: 216px;
+    min-height: 50px;
+
+    background-color: var(--accent-color);
+    color: var(--light-txtcolor);
+    border-radius: 4px;
+    cursor: pointer;
+
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
     text-align: center;
     letter-spacing: 0.06em;
-    cursor: pointer;
-}
-.hero-btn:hover, .hero-btn:focus {
-    color:var(--primary-txtcolor);
 }
 
- /* <section class="sector advantages"> */
-.advantages h3 {
+.hero__btn:hover,
+.hero__btn:focus {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Оформляем секцию преимущества benefits */
+.benefits__list {
+    display: flex;
+}
+
+.benefits__item {
+    width: calc((100%-60px)/4);
+}
+
+.benefits__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.benefits__title {
+    margin-bottom: 10px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
 }
-.advantages .txtcontent {
+
+.benefits__text {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
 }
 
-.services h2,
-.team h2 {
+
+/* Оформляем секцию преимущества services */
+.services.section {
+    padding-top: 0;
+}
+
+.services__title,
+.team__title {
+    margin-bottom: 50px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -123,57 +270,109 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* <section class="sector services">
-<section class="sector team"> */
-.sector.team {
+.services__list {
+    display: flex;
+}
+
+.services__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+/* Оформляем секцию преимущества team */
+.team.section {
     background-color: var(--secondary-backgrcolor);
 }
 
-.team h3 {
+.team__cards {
+    display: flex;
+}
+
+.team__card {
+    padding-bottom: 30px;
+
     background-color: var(--primary-backgrcolor);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team__card:not(:last-child) {
+    margin-right: 30px;
+}
+
+.team__foto {
+    display: block;
+
+    margin-bottom: 30px;
+}
+
+.team__name {
+    margin-bottom: 10px;
+
+    background-color: var(--primary-backgrcolor);
+
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-align: center;
 }
-.team .txtcontent {
+
+.team__profession {
     background-color: var(--primary-backgrcolor);
+
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-align: center;
 }
 
-/* <footer> */
+/* Оформляем footer */
 .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     background-color: var(--darkpart-backgrcolor);
 }
-.footer .logo {
-    color:var(--light-txtcolor);
+
+.address__item:not(:last-child) {
+    margin-bottom: 9px;
 }
-.footer .address {
+
+.address__link {
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-}
-.address .location {
-    color: var(--light-txtcolor);
-}
-.address .mail,
-.address .tel  {
-    color:var(--footer-contacts-txtcolor)
-}
-.address .link:hover,
-.address .link:focus {
-    color: var(--accent-color);
+    color: var(--footer-contacts-txtcolor)
 }
 
+.address__link--location {
+    color: var(--light-txtcolor);
+}
+
+
 /* Portfolio */
-/* <section class="sector filter"> */
-/* <ul class="buttons list"> */
-.filter .btn {
+/* Оформляем секцию filter */
+.filter__list {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 50px;
+}
+
+.filter__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.filter__btn {
+    padding: 6px 22px;
+    border: 0;
+    border-radius: 4px;
+
     background-color: var(--secondary-backgrcolor);
     color: var(--primary-txtcolor);
+
+
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -181,24 +380,58 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
 }
-.filter .btn:hover,
-.filter .btn:focus {
+
+.filter__btn:hover,
+.filter__btn:focus {
     background-color: var(--accent-color);
     color: var(--light-txtcolor);
     cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
- /* <ul class="examples list"> */
-.filter h2 {
+.example__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.example__item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.example__item:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
+}
+
+.example__link {
+    display: block;
+}
+
+.example__img {
+    display: block;
+}
+
+.example__txt-wrapper {
+    padding-top: 20px;
+    padding-left: 24px;
+    padding-bottom: 20px;
+    padding-right: 24px;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.example__title {
+    margin-bottom: 4px;
+
     color: var(--primary-txtcolor);
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
-.filter .txtcontent {
+
+.example__text {
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.03em;
 }
-
